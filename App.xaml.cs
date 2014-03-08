@@ -7,6 +7,9 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using WeiBoAnalyser.Resources;
+using TencentWeiboSDK;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace WeiBoAnalyser
 {
@@ -17,6 +20,8 @@ namespace WeiBoAnalyser
         /// </summary>
         /// <returns>电话应用程序的根框架。</returns>
         public static PhoneApplicationFrame RootFrame { get; private set; }
+
+        public static AccountDetail Account { get; private set; }
 
         /// <summary>
         /// Application 对象的构造函数。
@@ -55,6 +60,37 @@ namespace WeiBoAnalyser
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
 
+            Account = new AccountDetail();
+
+            // 配置AppKey和AppSecret
+            //OAuthConfigruation.APP_KEY = @"801403913";
+            //OAuthConfigruation.APP_SECRET = @"6bb642be3719b3e65fec6b2d649813ea";
+
+            //OAuthConfigruation.IfSaveAccessToken = false;
+
+            //string dbPath = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "weibodb.sqlite");
+            //if (!FileExists("weibodb.sqlite").Result)
+            //{
+            //    using (var db = new SQLite.SQLiteConnection(dbPath))
+            //    {
+            //        db.CreateTable<WeiBo.Core.Function.Person>();
+            //    }
+            //}
+        }
+
+        private async Task<bool> FileExists(string filename)
+        {
+            var result = false;
+            try
+            {
+                var store = await Windows.Storage.ApplicationData.Current.LocalFolder.GetFileAsync(filename);
+                result = true;
+            }
+            catch
+            {
+
+            }
+            return result;
         }
 
         // 应用程序启动(例如，从“开始”菜单启动)时执行的代码
