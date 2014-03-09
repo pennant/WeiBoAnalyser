@@ -68,37 +68,9 @@ namespace WeiBoAnalyser
 
             //OAuthConfigruation.IfSaveAccessToken = false;
 
-            //DbHelper.DeleteDb();
-            //Windows.Storage.ApplicationData.Current.LocalFolder.DeleteAsync();
-            //string dbPath = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "weibodb.sqlite");
-
-            //if (!FileExists("weibodb.sqlite").Result)
-            //{
-            //    DbHelper.CreateTable<Person>();
-            //    //using (var db = new SQLite.SQLiteConnection(dbPath))
-            //    //{
-            //    //    db.CreateTable<Person>();
-            //    //}
-            //}
-            //DbHelper.CreateTable<Person>();
             DbHelper.DeleteDb();
             DbHelper.Init();
             DbHelper.CreateTable<Person>();
-        }
-
-        private async Task<bool> FileExists(string filename)
-        {
-            var result = false;
-            try
-            {
-                var store = await Windows.Storage.ApplicationData.Current.LocalFolder.GetFileAsync(filename);
-                result = true;
-            }
-            catch
-            {
-
-            }
-            return result;
         }
 
         // 应用程序启动(例如，从“开始”菜单启动)时执行的代码

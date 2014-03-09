@@ -1,4 +1,5 @@
-﻿
+﻿using System.Threading;
+
 namespace WeiBoAnalyser.WeiBoAPI
 {
     public class Result
@@ -10,6 +11,10 @@ namespace WeiBoAnalyser.WeiBoAPI
         public int ErrCode { get; set; }
 
         public string Msg { get; set; }
+
+        public AutoResetEvent AutoResetEvent { get; set; }
+
+        public int Page { get; set; }
 
         public Result() { }
 

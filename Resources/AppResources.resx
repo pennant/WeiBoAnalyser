@@ -137,4 +137,7 @@
   <data name="GetIdolListMenuItemText" xml:space="preserve">
     <value>获取收听用户的信息</value>
   </data>
+  <data name="GetFansListMenuItemText" xml:space="preserve">
+    <value>获取粉丝用户的信息</value>
+  </data>
 </root>
