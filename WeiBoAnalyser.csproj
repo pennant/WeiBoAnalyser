@@ -91,7 +91,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AccountDetail.cs" />
+    <Compile Include="Common\HttpRequestWorker.cs" />
+    <Compile Include="WeiBoAPI\AccountDetail.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -108,6 +109,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="WeiBoAPI\Friends.cs" />
+    <Compile Include="WeiBoAPI\Person.cs" />
+    <Compile Include="WeiBoAPI\Result.cs" />
+    <Compile Include="WeiBoAPI\Sex.cs" />
+    <Compile Include="WeiBoAPI\UserAPI.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -161,10 +167,6 @@
     <ProjectReference Include="..\SDKSrc\TencentWeiboSDK.csproj">
       <Project>{32287EA3-030F-4CFC-826A-80460A9BE708}</Project>
       <Name>TencentWeiboSDK</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WeiBo.Core\WeiBo.Core.csproj">
-      <Project>{55531A8A-AFA3-43F4-999D-375ECCA7AAD4}</Project>
-      <Name>WeiBo.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />

@@ -36,12 +36,34 @@
                 <RowDefinition Height="30" />
                 <RowDefinition Height="30" />
                 <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
             </Grid.RowDefinitions>
             
             <TextBlock Grid.Column="0" Grid.Row="0" Text="Name" HorizontalAlignment="Right" Margin="0,0,5,0" />
             <TextBlock Grid.Column="1" Grid.Row="0" Name="txtName" HorizontalAlignment="Left" Margin="5,0,0,0" />
+            
             <TextBlock Grid.Column="0" Grid.Row="1" Text="NickName" HorizontalAlignment="Right" Margin="0,0,5,0" />
             <TextBlock Grid.Column="1" Grid.Row="1" Name="txtNickName" HorizontalAlignment="Left" Margin="5,0,0,0" />
+            
+            <TextBlock Grid.Column="0" Grid.Row="2" Text="FansCount" HorizontalAlignment="Right" Margin="0,0,5,0" />
+            <TextBlock Grid.Column="1" Grid.Row="2" Name="txtFansCount" HorizontalAlignment="Left" Margin="5,0,0,0" />
+
+            <TextBlock Grid.Column="0" Grid.Row="3" Text="FavoursCount" HorizontalAlignment="Right" Margin="0,0,5,0" />
+            <TextBlock Grid.Column="1" Grid.Row="3" Name="txtFavoursCount" HorizontalAlignment="Left" Margin="5,0,0,0" />
+
+            <TextBlock Grid.Column="0" Grid.Row="4" Text="IdolsCount" HorizontalAlignment="Right" Margin="0,0,5,0" />
+            <TextBlock Grid.Column="1" Grid.Row="4" Name="txtIdolsCount" HorizontalAlignment="Left" Margin="5,0,0,0" />
+
+            <TextBlock Grid.Column="0" Grid.Row="5" Text="Level" HorizontalAlignment="Right" Margin="0,0,5,0" />
+            <TextBlock Grid.Column="1" Grid.Row="5" Name="txtLevel" HorizontalAlignment="Left" Margin="5,0,0,0" />
+
+            <TextBlock Grid.Column="0" Grid.Row="6" Text="OpenId" HorizontalAlignment="Right" Margin="0,0,5,0" />
+            <TextBlock Grid.Column="1" Grid.Row="6" Name="txtOpenId" HorizontalAlignment="Left" Margin="5,0,0,0" />
         </Grid>
     </Grid>
 

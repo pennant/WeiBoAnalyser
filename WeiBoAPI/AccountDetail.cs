@@ -1,6 +1,5 @@
 ﻿
-using WeiBo.Core.Function;
-namespace WeiBoAnalyser
+namespace WeiBoAnalyser.WeiBoAPI
 {
     public class AccountDetail
     {
