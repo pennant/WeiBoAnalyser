@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\sqlite-net-wp8.3.8.3.100\build\windowsphone8\sqlite-net-wp8.props" Condition="Exists('..\packages\sqlite-net-wp8.3.8.3.100\build\windowsphone8\sqlite-net-wp8.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -74,7 +75,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Bin\ARM\Debug</OutputPath>
-    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;USE_WP8_NATIVE_SQLITE</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
@@ -91,7 +92,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Common\DbHelper.cs" />
     <Compile Include="Common\HttpRequestWorker.cs" />
+    <Compile Include="Common\SQLite.cs" />
+    <Compile Include="Common\SQLiteAsync.cs" />
     <Compile Include="WeiBoAPI\AccountDetail.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -109,7 +113,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="WeiBoAPI\Friends.cs" />
+    <Compile Include="WeiBoAPI\FriendsAPI.cs" />
     <Compile Include="WeiBoAPI\Person.cs" />
     <Compile Include="WeiBoAPI\Result.cs" />
     <Compile Include="WeiBoAPI\Sex.cs" />
@@ -135,6 +139,7 @@
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
     </None>
+    <None Include="WeiBoAnalyser_2014_03_09_17_02_10.sap" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\AlignmentGrid.png" />
@@ -169,6 +174,19 @@
       <Name>TencentWeiboSDK</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="SQLite.WP80, Version=3.8.3.1">
+      <Name>SQLite for Windows Phone</Name>
+    </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Sqlite">
+      <HintPath>..\packages\sqlite-net-wp8.3.8.3.100\lib\windowsphone8\Sqlite.winmd</HintPath>
+    </Reference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
@@ -179,4 +197,5 @@
   </Target>
   -->
   <ProjectExtensions />
+  <Import Project="..\packages\sqlite-net-wp8.3.8.3.100\build\windowsphone8\sqlite-net-wp8.targets" Condition="Exists('..\packages\sqlite-net-wp8.3.8.3.100\build\windowsphone8\sqlite-net-wp8.targets')" />
 </Project>

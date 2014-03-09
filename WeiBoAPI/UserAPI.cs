@@ -44,9 +44,9 @@ namespace WeiBoAnalyser.WeiBoAPI
                             Convert.ToInt32(eleData.Element("birth_month").Value),
                             Convert.ToInt32(eleData.Element("birth_day").Value));
                         person.Experience = Convert.ToInt32(eleData.Element("exp").Value);
-                        person.Country = Convert.ToInt32(eleData.Element("country_code").Value);
-                        person.Province = Convert.ToInt32(eleData.Element("province_code").Value);
-                        person.City = Convert.ToInt32(eleData.Element("city_code").Value);
+                        person.Country = String.IsNullOrEmpty(eleData.Element("country_code").Value) ? 0 : Convert.ToInt32(eleData.Element("country_code").Value);
+                        person.Province = String.IsNullOrEmpty(eleData.Element("province_code").Value) ? 0 : Convert.ToInt32(eleData.Element("province_code").Value);
+                        person.City = String.IsNullOrEmpty(eleData.Element("city_code").Value) ? 0 : Convert.ToInt32(eleData.Element("city_code").Value);
                         person.FansNum = Convert.ToInt32(eleData.Element("fansnum").Value);
                         person.FavNum = Convert.ToInt32(eleData.Element("favnum").Value);
                         person.IdolNum = Convert.ToInt32(eleData.Element("idolnum").Value);

@@ -2,10 +2,12 @@
 using Microsoft.Phone.Shell;
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Navigation;
+using WeiBoAnalyser.Common;
 using WeiBoAnalyser.Resources;
 using WeiBoAnalyser.WeiBoAPI;
 
@@ -66,14 +68,22 @@ namespace WeiBoAnalyser
 
             //OAuthConfigruation.IfSaveAccessToken = false;
 
+            //DbHelper.DeleteDb();
+            //Windows.Storage.ApplicationData.Current.LocalFolder.DeleteAsync();
             //string dbPath = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "weibodb.sqlite");
+
             //if (!FileExists("weibodb.sqlite").Result)
             //{
-            //    using (var db = new SQLite.SQLiteConnection(dbPath))
-            //    {
-            //        db.CreateTable<WeiBo.Core.Function.Person>();
-            //    }
+            //    DbHelper.CreateTable<Person>();
+            //    //using (var db = new SQLite.SQLiteConnection(dbPath))
+            //    //{
+            //    //    db.CreateTable<Person>();
+            //    //}
             //}
+            //DbHelper.CreateTable<Person>();
+            DbHelper.DeleteDb();
+            DbHelper.Init();
+            DbHelper.CreateTable<Person>();
         }
 
         private async Task<bool> FileExists(string filename)

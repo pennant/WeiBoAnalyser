@@ -1,10 +1,10 @@
-﻿
-using System;
+﻿using System;
+
 namespace WeiBoAnalyser.WeiBoAPI
 {
     public class Person
     {
-        //[SQLite.PrimaryKey, SQLite.AutoIncrement]
+        [SQLite.PrimaryKey, SQLite.AutoIncrement]
         public int Id { get; set; }
 
         public string Name { get; set; }
@@ -93,6 +93,7 @@ namespace WeiBoAnalyser.WeiBoAPI
         /// <summary>
         /// 用户唯一编号
         /// </summary>
+        //[SQLite.PrimaryKey]
         public string OpenId { get; set; }
 
         /// <summary>
