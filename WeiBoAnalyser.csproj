@@ -118,6 +118,8 @@
     <Compile Include="WeiBoAPI\Person.cs" />
     <Compile Include="WeiBoAPI\Result.cs" />
     <Compile Include="WeiBoAPI\Sex.cs" />
+    <Compile Include="WeiBoAPI\StatusesAPI.cs" />
+    <Compile Include="WeiBoAPI\Topic.cs" />
     <Compile Include="WeiBoAPI\UserAPI.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -135,6 +137,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Document\design.eap" />
     <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">

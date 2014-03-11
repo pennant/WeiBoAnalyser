@@ -7,12 +7,24 @@ namespace WeiBoAnalyser.WeiBoAPI
         [SQLite.PrimaryKey, SQLite.AutoIncrement]
         public int Id { get; set; }
 
+        /// <summary>
+        /// 姓名
+        /// </summary>
         public string Name { get; set; }
 
+        /// <summary>
+        /// 昵称
+        /// </summary>
         public string NickName { get; set; }
 
+        /// <summary>
+        /// 出生日期
+        /// </summary>
         public DateTime Birthday { get; set; }
 
+        /// <summary>
+        /// 经验值
+        /// </summary>
         public int Experience { get; set; }
 
         /// <summary>
